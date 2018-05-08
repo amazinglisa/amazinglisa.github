@@ -1,0 +1,4 @@
+.DS_Store
+*.tgz
+npm-debug.log*
+node_modules/
