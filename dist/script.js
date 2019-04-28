@@ -73,7 +73,7 @@ function startWebRTC(isOfferer) {
 
     // 当远程数据流到达时，将数据流装载到video中
     pc.onaddstream = function(event){
-        remoteVideo.srcObject = event.stream;
+        document.getElementById('remoteVideo').srcObject = event.stream;
     };
 
     // 获取本地媒体流
@@ -82,8 +82,7 @@ function startWebRTC(isOfferer) {
         video: true,
     }).then( function(stream) {
         // 将本地捕获的视频流装载到本地video中
-        localVideo.srcObject = stream;
-
+        document.getElementById('localVideo').srcObject = stream;
         // 将本地流加入RTCPeerConnection 实例中 发送到其他端
         pc.addStream(stream);
     }, onError);
