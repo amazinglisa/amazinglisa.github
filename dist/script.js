@@ -81,12 +81,11 @@ function startWebRTC(isOfferer) {
         audio: true,
         video: true,
     }).then( function(stream) {
-
         // 将本地捕获的视频流装载到本地video中
-        // localVideo.srcObject = stream;
-        //
-        // // 将本地流加入RTCPeerConnection 实例中 发送到其他端
-        // pc.addStream(stream);
+        localVideo.srcObject = stream;
+
+        // 将本地流加入RTCPeerConnection 实例中 发送到其他端
+        pc.addStream(stream);
     }, onError);
 
     // 从Scaledrone监听信令数据
