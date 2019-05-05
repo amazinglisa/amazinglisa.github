@@ -38,7 +38,7 @@ drone.on('open', function(error){
         console.log('MEMBERS', members);
 
         // 如果你是第二个链接到房间的人，就会创建offer
-        var isOfferer = members.length === 2;
+        var isOfferer = members.length === 1;
         startWebRTC(isOfferer);
     });
 });
@@ -53,9 +53,9 @@ function sendMessage(message) {
 
 function startWebRTC(isOfferer) {
     pc = new RTCPeerConnection(configuration);
-
     // 当本地ICE Agent需要通过信号服务器发送信息到其他端时
     // 会触发icecandidate事件回调
+    console.log(888)
     pc.onicecandidate = function(event){
         if (event.candidate) {
             sendMessage({ 'candidate': event.candidate });
@@ -73,6 +73,7 @@ function startWebRTC(isOfferer) {
 
     // 当远程数据流到达时，将数据流装载到video中
     pc.onaddstream = function(event){
+      console.log(99)
         document.getElementById('remoteVideo').srcObject = event.stream;
     };
 
