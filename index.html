@@ -15,7 +15,8 @@
 
        let d = encodeURIComponent('{"p":{"variety":3,"planId":16666,"rstatus":0}}')
         let params = {
-          schema: `xeswangxiao://xrsApp?m=livevideo/xrsmodule&en=0&d=${d}`
+          schema: `xeswangxiao://xrsApp?m=livevideo/xrsmodule&en=0&d=${d}`,
+          needLogin: 1
         }
         console.error(params)
         new OpenInstall({      //初始化部分
