@@ -29,6 +29,7 @@
             //preferWakeup:true,       //拉起优先 开关，等同于应用控制台里面的拉起优先开关
             onready : function() {   //onready方法是js初始化完成后的回调方法
                 var m = this,        // m为当前初始化成功的openinstall对象
+                m.wakeupOrInstall();
                 button = document.getElementById("downloadButton") //查找id为downloadButton的元素。
                 button.style.visibility = "visible"       //js加载成功后，把button显示出来（这一句可删除，不影响功能）
 //                 m.schemeWakeup();      //执行scheme协议尝试唤醒app，该api仅执行scheme协议，不包含ios的通用链接协议唤醒
