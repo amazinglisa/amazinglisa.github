@@ -31,7 +31,7 @@
                 var m = this,        // m为当前初始化成功的openinstall对象
                 button = document.getElementById("downloadButton") //查找id为downloadButton的元素。
                 button.style.visibility = "hidden"       //js加载成功后，把button显示出来（这一句可删除，不影响功能）
-//                 m.wakeupOrInstall();
+                m.wakeupOrInstall();
 //                 m.schemeWakeup();      //执行scheme协议尝试唤醒app，该api仅执行scheme协议，不包含ios的通用链接协议唤醒
                 button.onclick = function() {   //为button绑定对应的点击事件
                     m.wakeupOrInstall();        //先尝试唤醒app，然后延时执行下载操作
