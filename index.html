@@ -33,7 +33,8 @@
 //                 button.style.visibility = "hidden"       //js加载成功后，把button显示出来（这一句可删除，不影响功能）
 //                 m.wakeupOrInstall();
 //                 m.schemeWakeup();      //执行scheme协议尝试唤醒app，该api仅执行scheme协议，不包含ios的通用链接协议唤醒
-                m.wakeupOrInstall();
+//                 m.wakeupOrInstall();
+                window.location.href = `xeswangxiao://xrsApp?m=homework_no_datainfo&en=0&d={}`
                 button.onclick = function() {   //为button绑定对应的点击事件
                     m.wakeupOrInstall();        //先尝试唤醒app，然后延时执行下载操作
                     return false;
