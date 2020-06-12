@@ -35,18 +35,10 @@
                 m.schemeWakeup();      //执行scheme协议尝试唤醒app，该api仅执行scheme协议，不包含ios的通用链接协议唤醒
 //                 m.wakeupOrInstall();
                 
-                // button.onclick = function() {   //为button绑定对应的点击事件
-                //     m.wakeupOrInstall();        //先尝试唤醒app，然后延时执行下载操作
-                //     return false;
-                // };
-                button.addEventListener('click', function () {
-                    window.location.href = `xeswangxiao://xrsApp?m=homework_no_datainfo&en=0&d={}`
-                    // m.wakeupOrInstall();
-                })
-                setTimeout(() => {
-                    alert(888)
-                    button.click()
-                }, 0);
+                button.onclick = function() {   //为button绑定对应的点击事件
+                    m.wakeupOrInstall();        //先尝试唤醒app，然后延时执行下载操作
+                    return false;
+                }; 
             }
         }, params)
     
