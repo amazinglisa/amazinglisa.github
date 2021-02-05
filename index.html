@@ -1,47 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <!-- <script type="text/javascript" src="//res.cdn.openinstall.io/openinstall.js"></script> -->
-  <script type="text/javascript" charset="UTF-8" src="https://ocpc.xueersi.com/openinstall.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <button id="downloadButton" style="font-size: 40px;width: 200px; height: 200px;">点击打开</button>  
-    <script type="text/javascript">
-
-       let d = encodeURIComponent('{"p":{"variety":3,"planId":192899,"rstatus":1,"liveRoomType":1}}')
-        let params = {
-          schema: `xeswangxiao://xrsApp?m=livevideo/xrsmodule&en=0&d=${d}`,
-          // 预习
-//           schema:"xeswangxiao%3a%2f%2fxrsApp%3fm%3dlivevideo%2fxrsmodule%26en%3d0%26d%3d%7b%22p%22%3a%7b%22variety%22%3a3%2c%22planId%22%3a16639%2c%22rstatus%22%3a0%2c%22liveRoomType%22%3a1%7d%7d",
-          source_id: 191468812,
-          needLogin: 1
-        }
-        console.error(params)
-        new OpenInstall({      //初始化部分
-            // appKey: 'lscfd4',
-            appKey : "uls1kw",   //appkey参数配置
-            channelCode:"191468812",   //如果要需要将渠道编号写死在代码。就需要使用该参数传递，不     能在data变量里面自行加channelCode字段的参数，否则无效。
-            preferWakeup:true,       //拉起优先 开关，等同于应用控制台里面的拉起优先开关
-            onready : function() {   //onready方法是js初始化完成后的回调方法
-                var m = this,        // m为当前初始化成功的openinstall对象
-                button = document.getElementById("downloadButton") //查找id为downloadButton的元素。
-//                 button.style.visibility = "hidden"       //js加载成功后，把button显示出来（这一句可删除，不影响功能）
-//                 m.wakeupOrInstall();
-                m.schemeWakeup();      //执行scheme协议尝试唤醒app，该api仅执行scheme协议，不包含ios的通用链接协议唤醒
-//                 m.wakeupOrInstall();
-                
-                button.onclick = function() {   //为button绑定对应的点击事件
-                    m.wakeupOrInstall();        //先尝试唤醒app，然后延时执行下载操作
-                    return false;
-                }; 
-            }
-        }, params)
+    <video 
+        class="dplayer-video dplayer-video-current" 
+        webkit-playsinline="" playsinline="" preload="true" 
+        src="//activity.xueersi.com/oss/resource/0203b-1612529001773.mp4" 
+        x5-video-player-type="h5-page">
     
-    </script>
+    </video>
 </body>
 </html>
