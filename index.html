@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <video src="//activity.xueersi.com/oss/resource/0203b-1612529001773.mp4"></video>
+    <video id="video" src="//activity.xueersi.com/oss/resource/0203b-1612529001773.mp4"></video>
+    document.body.onclick = function () {
+        document.getElementById('video').play()
+    }
 </body>
 </html>
